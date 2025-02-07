@@ -725,38 +725,257 @@ kbd {
     transform: rotate(90deg);
 }
 
-@media (max-width: 480px) {
-    .button-group {
-        flex-direction: column;
+/* Media Queries */
+/* Large Devices (Desktops) */
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 90%;
     }
-    
+
+    .card {
+        padding: 2rem;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media screen and (max-width: 992px) {
+    .container {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
     .card {
         padding: 1.5rem;
     }
-    
-    h1 {
-        font-size: 2rem;
+
+    .feature-badges {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .options-group {
-        flex-direction: column;
+    .badge {
+        font-size: 0.85rem;
+    }
+
+    .tabs {
         gap: 0.5rem;
+    }
+
+    .button-group {
+        gap: 0.8rem;
+    }
+}
+
+/* Small Devices (Landscape Phones) */
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo-animation {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .input-group {
+        margin-bottom: 1rem;
     }
 
     .key-input-wrapper {
         flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    input[type="range"] {
+        width: 100%;
     }
 
     input[type="number"] {
         width: 100%;
+        max-width: none;
     }
 
-    .copyright-links {
+    .button-group {
         flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .output-actions {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .history-section {
+        margin-top: 2rem;
+    }
+
+    .footer-content {
+        gap: 1rem;
+    }
+}
+
+/* Extra Small Devices (Portrait Phones) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-animation {
+        font-size: 2rem;
+    }
+
+    .feature-badges {
         gap: 0.5rem;
     }
 
-    .copyright-links .divider {
+    .badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .tabs button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .input-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .file-upload {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .file-label {
+        width: 100%;
+        text-align: center;
+    }
+
+    .textarea-wrapper {
+        margin-bottom: 0.5rem;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    .char-count {
+        font-size: 0.8rem;
+    }
+
+    .copyright-section {
+        padding: 0.5rem 0;
+    }
+
+    .copyright-logo {
+        font-size: 1rem;
+    }
+
+    .copyright-logo i {
+        font-size: 1.2rem;
+    }
+
+    .copyright-text {
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .help-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .keyboard-shortcuts {
+        font-size: 0.8rem;
+    }
+}
+
+/* Height-based Media Queries */
+@media screen and (max-height: 700px) {
+    .card {
+        margin: 1rem auto;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    .history-section {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+}
+
+/* Dark Mode Specific Media Queries */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0000ff;
+        --secondary-color: #008000;
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+
+    [data-theme="dark"] {
+        --primary-color: #00ff00;
+        --secondary-color: #00ffff;
+        --text-color: #ffffff;
+        --background-color: #000000;
+    }
+}
+
+/* Print Media Query */
+@media print {
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+
+    .button-group,
+    .input-actions,
+    .footer,
+    .theme-toggle {
         display: none;
+    }
+
+    .output-container {
+        border: 1px solid #000;
+        margin: 1rem 0;
+    }
+
+    .copyright-text {
+        margin-top: 2rem;
+        text-align: center;
     }
 }
